@@ -1,0 +1,3 @@
+﻿  Main.cpp
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(131,35): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  FlappyBirdClone.vcxproj -> D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\Debug\FlappyBirdClone.exe
