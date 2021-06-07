@@ -1,3 +1,11 @@
 ﻿  Main.cpp
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(131,35): warning C4326: return type of 'main' should be 'int' instead of 'void'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(64,46): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(64,53): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(65,45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(65,52): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(66,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(66,51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(67,45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(67,52): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(97,35): warning C4326: return type of 'main' should be 'int' instead of 'void'
   FlappyBirdClone.vcxproj -> D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\Debug\FlappyBirdClone.exe
