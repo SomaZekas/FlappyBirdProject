@@ -7,9 +7,26 @@
 #pragma comment(lib, "freeimage.lib")
 
 
-GLuint BackgroundImage, Ground, Pipes, GameOver;
+GLuint BackgroundImage, Ground, Pipes, GameOver, Score;
 bool gameOver = false;
-//int score;
+//int time;
+//int frame = 0, time, timebase = 0;
+
+GLfloat diffuse[] = { 0.0f, 0.0f, 0.1f, 1.0f };  // { 1.0f, 1.0f, 1.0f, 1.0f };
+GLfloat ambient[] = { 1.0f, 1.0f, 1.0f, 1.0f };  //{ 0.25f, 0.25f, 0.25f, 1.0f };
+GLfloat position[] = { 0.0f, 0.0f, 2.0f, 1.0f }; //{ 0.f, 0.45f, 1.0f, 1.0f };
+GLfloat specular[] = { 0.2f, 1.0f, 0.2f, 1.0f }; //{ 1.0f, 1.0f, 1.0f, 1.0f };
+GLfloat shine[] = { 128.0f };
+
+int score = 10;
+//unsigned char string[] = score;
+//int w;
+//w = glutBitmapLength(GLUT_BITMAP_8_BY_13, string);
+
+
+//GLfloat position[] = { 0.0f, 0.0f, 0.0f, 0.0f };
+
+
 
 int loadTexture(const char* location) {
 
@@ -36,6 +53,24 @@ int loadTexture(const char* location) {
 
 }
 
+void reshapeFunc(int w, int h)
+{
+	printf("%d %d\n", w, h);
+
+	glViewport(0, 0, w, h);
+
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+
+
+	gluOrtho2D(-w / 600, w / 600, -h / 700, h / 700);
+
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+}
+
 
 class PipeObject {
 public:
@@ -46,7 +81,7 @@ public:
 	};
 
 	int count;
-	float gap = 0.3;
+	float gap = 0.5;
 	float leftEdge = -1;
 	GLuint texture;
 	Pipe* pipes;
@@ -183,16 +218,25 @@ public:
 		//rotate when up or down.
 
 		for (int i = 0; i < thePipe.count; i++) {
-			if (y1 < groundLevelBird) {
-				gameOver = true;
+			if (
+				y1 < groundLevelBird ||
+				(!(y2 < thePipe.pipes[i].y && y1 > thePipe.pipes[i].y - thePipe.gap) && (thePipe.pipes[i].x1 <= 0.06 && thePipe.pipes[i].x2 > -0.06))
+				)
+			{
+				//gameOver = true;
 			}
 			else if (!gameOver) {
 				if (GetAsyncKeyState(VK_SPACE) != 0)
-					y1 += 0.03;
+					y1 += 0.02;
 				else
 					y1 -= 0.01;
 
 			}
+
+			/*if ((y2 < thePipe.pipes[i].y && y1 > thePipe.pipes[i].y - thePipe.gap) && (thePipe.pipes[i].x1 <= 0.06 && thePipe.pipes[i].x2 > -0.06)) {
+				score++;
+
+			}*/
 		}
 	}
 
@@ -200,11 +244,26 @@ public:
 
 BirdObject theBird;
 
+void dayOrNight() {
+	if (GetAsyncKeyState(VK_UP)) {
+		BackgroundImage = loadTexture("assets/images/backgroundImage-Day.png");
+		glDisable(GL_LIGHT0);
+		glDisable(GL_LIGHTING);
+	}
+	else if (GetAsyncKeyState(VK_DOWN)) {
+		BackgroundImage = loadTexture("assets/images/backgroundImage-Night.png");
+		glEnable(GL_LIGHT0);
+		glEnable(GL_LIGHTING);
+
+	}
+}
+
 void myTimer(int t) {
+	dayOrNight();
 	theBird.update();
 	thePipe.update();
 	glutPostRedisplay();
-	glutTimerFunc(16, myTimer, 0);
+	glutTimerFunc(16, myTimer, 16);
 }
 
 void renderScene() {
@@ -230,6 +289,8 @@ void renderScene() {
 
 	//Render GameOver Text
 	if (gameOver) {
+		//glLightfv(GL_LIGHT0, GL_POSITION, position);
+
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_BLEND);
 
@@ -258,8 +319,13 @@ void renderScene() {
 	glPopMatrix();
 
 
+	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, '3');
+
+
 	glutSwapBuffers();
 }
+
+
 
 void main(int argc, char* argv[]) {
 
@@ -271,17 +337,25 @@ void main(int argc, char* argv[]) {
 	glutCreateWindow("Flappy Bird Clone");
 
 	glutDisplayFunc(renderScene);
+	glutReshapeFunc(reshapeFunc);
 	glutTimerFunc(16, myTimer, 0);
+
+	//time = glutGet(GLUT_ELAPSED_TIME);
 
 	glEnable(GL_TEXTURE_2D);
 
 	//Initialize Textures and objects
-	BackgroundImage = loadTexture("assets/images/backgroundImage.png");
+	BackgroundImage = loadTexture("assets/images/backgroundImage-Day.png");
 	Ground = loadTexture("assets/images/ground.png");
 	GameOver = loadTexture("assets/images/gameover.png");
 	
 	theBird.initializeBirdObject();
 	thePipe.initialize();
+
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
+	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
+	glLightfv(GL_LIGHT0, GL_POSITION, position);
+	//glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
 
 	glutMainLoop();
 
