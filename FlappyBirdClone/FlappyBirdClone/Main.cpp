@@ -9,23 +9,12 @@
 
 GLuint BackgroundImage, Ground, Pipes, GameOver, Score;
 bool gameOver = false;
-//int time;
-//int frame = 0, time, timebase = 0;
 
 GLfloat diffuse[] = { 0.0f, 0.0f, 0.1f, 1.0f };  // { 1.0f, 1.0f, 1.0f, 1.0f };
 GLfloat ambient[] = { 1.0f, 1.0f, 1.0f, 1.0f };  //{ 0.25f, 0.25f, 0.25f, 1.0f };
 GLfloat position[] = { 0.0f, 0.0f, 2.0f, 1.0f }; //{ 0.f, 0.45f, 1.0f, 1.0f };
-GLfloat specular[] = { 0.2f, 1.0f, 0.2f, 1.0f }; //{ 1.0f, 1.0f, 1.0f, 1.0f };
-GLfloat shine[] = { 128.0f };
 
-int score = 10;
-//unsigned char string[] = score;
-//int w;
-//w = glutBitmapLength(GLUT_BITMAP_8_BY_13, string);
-
-
-//GLfloat position[] = { 0.0f, 0.0f, 0.0f, 0.0f };
-
+//int score = 5;
 
 
 int loadTexture(const char* location) {
@@ -198,32 +187,33 @@ public:
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_BLEND);
 
+		
 		glBindTexture(GL_TEXTURE_2D, texture);
+		
 		glPushMatrix();
+		
 		glBegin(GL_QUADS);
+		
 		glTexCoord2f(0, 0); glVertex2f(-0.06, y1); //Down Left
 		glTexCoord2f(1, 0); glVertex2f(0.06, y1); //Down Right
 		glTexCoord2f(1, 1); glVertex2f(0.06, y2); //Upper Right
 		glTexCoord2f(0, 1); glVertex2f(-0.06, y2); //Upper Left
 		glEnd();
 		glPopMatrix();
-
 		glDisable(GL_BLEND);
 
 	}
 
 
 	void update() {
-		//dimming when lost.
-		//rotate when up or down.
-
+		
 		for (int i = 0; i < thePipe.count; i++) {
 			if (
 				y1 < groundLevelBird ||
 				(!(y2 < thePipe.pipes[i].y && y1 > thePipe.pipes[i].y - thePipe.gap) && (thePipe.pipes[i].x1 <= 0.06 && thePipe.pipes[i].x2 > -0.06))
 				)
 			{
-				//gameOver = true;
+				gameOver = true;
 			}
 			else if (!gameOver) {
 				if (GetAsyncKeyState(VK_SPACE) != 0)
@@ -263,7 +253,7 @@ void myTimer(int t) {
 	theBird.update();
 	thePipe.update();
 	glutPostRedisplay();
-	glutTimerFunc(16, myTimer, 16);
+	glutTimerFunc(16, myTimer, 0); ///////////////////////////////////////////////////////////////////////////////////////////////////CHRCK
 }
 
 void renderScene() {
@@ -289,7 +279,6 @@ void renderScene() {
 
 	//Render GameOver Text
 	if (gameOver) {
-		//glLightfv(GL_LIGHT0, GL_POSITION, position);
 
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_BLEND);
@@ -319,9 +308,6 @@ void renderScene() {
 	glPopMatrix();
 
 
-	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, '3');
-
-
 	glutSwapBuffers();
 }
 
@@ -340,7 +326,6 @@ void main(int argc, char* argv[]) {
 	glutReshapeFunc(reshapeFunc);
 	glutTimerFunc(16, myTimer, 0);
 
-	//time = glutGet(GLUT_ELAPSED_TIME);
 
 	glEnable(GL_TEXTURE_2D);
 
@@ -355,7 +340,6 @@ void main(int argc, char* argv[]) {
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
 	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
 	glLightfv(GL_LIGHT0, GL_POSITION, position);
-	//glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
 
 	glutMainLoop();
 
