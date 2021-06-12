@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <windows.h>
 #include "GL\freeglut.h"
 #include "FreeImage.h"
 
@@ -49,24 +50,17 @@ int loadTexture(const char* location) {
 
 }
 
-void reshapeFunc(int w, int h)
-{
-	printf("%d %d\n", w, h);
-
+void reshapeFunc(int w, int h) {
 	glViewport(0, 0, w, h);
 
-
-	glMatrixMode(GL_PROJECTION);
+	glMatrixMode(GL_PROJECTION); /////////////////////////////////////////////////////////////////////////////////////////CHRCK
 	glLoadIdentity();
-
-
 
 	gluOrtho2D(-w / 600, w / 600, -h / 700, h / 700);
 
-	glMatrixMode(GL_MODELVIEW);
+	glMatrixMode(GL_MODELVIEW); /////////////////////////////////////////////////////////////////////////////////////////CHRCK
 	glLoadIdentity();
 }
-
 
 class PipeObject {
 public:
@@ -81,9 +75,10 @@ public:
 	float leftEdge = -1;
 	float rightEdge = 1;
 	GLuint texture;
+
 	Pipe* pipes;
 
-public:
+
 	PipeObject(int count) {
 		this->count = count;
 		pipes = new Pipe[count];
@@ -224,7 +219,17 @@ public:
 				gameOver = true;
 				scoreX1 = -0.05;
 				scoreY1 = 0.0;
-				//score--;
+
+				if (GetAsyncKeyState(VK_BACK)) {
+					gameOver = false;
+					thePipe.initialize();
+					initializeBirdObject();
+					scoreX1 = -0.9;
+					scoreY1 = 0.8;
+					score = 0;
+					scoreBool = true;
+				}
+				
 			}
 			else if (!gameOver) {
 				if (GetAsyncKeyState(VK_SPACE) != 0)
@@ -269,8 +274,8 @@ void myTimer(int t) {
 	dayOrNight();
 	theBird.update();
 	thePipe.update();
-	glutPostRedisplay();
-	glutTimerFunc(16, myTimer, 0); ///////////////////////////////////////////////////////////////////////////////////////////////////CHECK
+	glutPostRedisplay(); ///////////////////////////////////////////////////////////////////////////////////////////////////CHRCK
+	glutTimerFunc(16, myTimer, 0); ///////////////////////////////////////////////////////////////////////////////////////////////////CHRCK
 }
 
 void renderScene() {
@@ -294,6 +299,19 @@ void renderScene() {
 	//Render Bird
 	theBird.renderBird();
 
+	
+
+	//Render Ground
+	glBindTexture(GL_TEXTURE_2D, Ground);
+	glPushMatrix();
+	glBegin(GL_QUADS);
+	glTexCoord2f(0, 0); glVertex2f(-1, -1); //Down Left
+	glTexCoord2f(1, 0); glVertex2f(1, -1); //Down Right
+	glTexCoord2f(1, 1); glVertex2f(1, -0.7); //Upper Right
+	glTexCoord2f(0, 1); glVertex2f(-1, -0.7); //Upper Left
+	glEnd();
+	glPopMatrix();
+
 	//Render GameOver Text
 	if (gameOver) {
 
@@ -312,17 +330,6 @@ void renderScene() {
 
 		glDisable(GL_BLEND);
 	}
-
-	//Render Ground
-	glBindTexture(GL_TEXTURE_2D, Ground);
-	glPushMatrix();
-	glBegin(GL_QUADS);
-	glTexCoord2f(0, 0); glVertex2f(-1, -1); //Down Left
-	glTexCoord2f(1, 0); glVertex2f(1, -1); //Down Right
-	glTexCoord2f(1, 1); glVertex2f(1, -0.7); //Upper Right
-	glTexCoord2f(0, 1); glVertex2f(-1, -0.7); //Upper Left
-	glEnd();
-	glPopMatrix();
 
 	//Render Score
 	Score = loadTexture(scoreString[score]);
@@ -345,9 +352,9 @@ void renderScene() {
 }
 
 
-
 void main(int argc, char* argv[]) {
 
+	//Location of score pictures
 	strcpy_s(scoreString[0], "assets/images/0.png");
 	strcpy_s(scoreString[1], "assets/images/1.png");
 	strcpy_s(scoreString[2], "assets/images/2.png");
@@ -359,7 +366,10 @@ void main(int argc, char* argv[]) {
 	strcpy_s(scoreString[8], "assets/images/8.png");
 	strcpy_s(scoreString[9], "assets/images/9.png");
 
+	//Initialize theme song
+	PlaySound(TEXT("assets/audio/theme.wav"), NULL, SND_LOOP | SND_ASYNC);
 
+	//Initializing Glut
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(0, 0);
@@ -369,7 +379,7 @@ void main(int argc, char* argv[]) {
 
 	glutDisplayFunc(renderScene);
 	glutReshapeFunc(reshapeFunc);
-	glutTimerFunc(16, myTimer, 0);
+	glutTimerFunc(16, myTimer, 0); ///////////////////////////////////////////////////////////////////////////////////////////CHRCK
 
 
 	glEnable(GL_TEXTURE_2D);
@@ -379,10 +389,9 @@ void main(int argc, char* argv[]) {
 	Ground = loadTexture("assets/images/ground.png");
 	GameOver = loadTexture("assets/images/gameover.png");
 	
-
-	
-	theBird.initializeBirdObject();
+	//Initializing Objects
 	thePipe.initialize();
+	theBird.initializeBirdObject();
 
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
 	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
