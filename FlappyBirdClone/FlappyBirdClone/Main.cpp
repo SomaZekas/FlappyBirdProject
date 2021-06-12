@@ -3,19 +3,26 @@
 #include "GL\freeglut.h"
 #include "FreeImage.h"
 
+
 #pragma comment(lib, "freeglut.lib")
 #pragma comment(lib, "freeimage.lib")
 
 
+//Define texture variables
 GLuint BackgroundImage, Ground, Pipes, GameOver, Score;
-bool gameOver = false;
 
+//Define light variables
 GLfloat diffuse[] = { 0.0f, 0.0f, 0.1f, 1.0f };  // { 1.0f, 1.0f, 1.0f, 1.0f };
 GLfloat ambient[] = { 1.0f, 1.0f, 1.0f, 1.0f };  //{ 0.25f, 0.25f, 0.25f, 1.0f };
 GLfloat position[] = { 0.0f, 0.0f, 2.0f, 1.0f }; //{ 0.f, 0.45f, 1.0f, 1.0f };
 
-//int score = 5;
+bool gameOver = false;
 
+//Define score variables
+int score = 0;
+bool scoreBool = true;
+char scoreString[10][50];
+float scoreX1 = -0.9, scoreY1 = 0.8; //Left edge of texture and lower edge of texture
 
 int loadTexture(const char* location) {
 
@@ -72,6 +79,7 @@ public:
 	int count;
 	float gap = 0.5;
 	float leftEdge = -1;
+	float rightEdge = 1;
 	GLuint texture;
 	Pipe* pipes;
 
@@ -86,7 +94,7 @@ public:
 
 		for (int i = 0; i < count; i++) {
 
-			if (pipes[i].x2 > leftEdge) {
+			if (pipes[i].x1 > leftEdge && pipes[i].x2 < rightEdge) {
 				
 				//Upper Pipe
 				glBindTexture(GL_TEXTURE_2D, texture);
@@ -214,6 +222,9 @@ public:
 				)
 			{
 				gameOver = true;
+				scoreX1 = -0.05;
+				scoreY1 = 0.0;
+				//score--;
 			}
 			else if (!gameOver) {
 				if (GetAsyncKeyState(VK_SPACE) != 0)
@@ -223,10 +234,16 @@ public:
 
 			}
 
-			/*if ((y2 < thePipe.pipes[i].y && y1 > thePipe.pipes[i].y - thePipe.gap) && (thePipe.pipes[i].x1 <= 0.06 && thePipe.pipes[i].x2 > -0.06)) {
-				score++;
+			if (thePipe.pipes[i].x1 <= -0.25 && thePipe.pipes[i].x2 >= -0.15)
+				scoreBool = true;
 
-			}*/
+			if ((y2 < thePipe.pipes[i].y && y1 > thePipe.pipes[i].y - thePipe.gap) && (thePipe.pipes[i].x1 <= 0.06 && thePipe.pipes[i].x2 > -0.06) && scoreBool) {
+				score++;
+				scoreBool = false;
+				if (score > 9)
+					score = 0;
+
+			}
 		}
 	}
 
@@ -253,7 +270,7 @@ void myTimer(int t) {
 	theBird.update();
 	thePipe.update();
 	glutPostRedisplay();
-	glutTimerFunc(16, myTimer, 0); ///////////////////////////////////////////////////////////////////////////////////////////////////CHRCK
+	glutTimerFunc(16, myTimer, 0); ///////////////////////////////////////////////////////////////////////////////////////////////////CHECK
 }
 
 void renderScene() {
@@ -307,6 +324,22 @@ void renderScene() {
 	glEnd();
 	glPopMatrix();
 
+	//Render Score
+	Score = loadTexture(scoreString[score]);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
+	
+	glBindTexture(GL_TEXTURE_2D, Score);
+	glPushMatrix();
+	glBegin(GL_QUADS);
+	glTexCoord2f(0, 0); glVertex2f(scoreX1, scoreY1); //Down Left
+	glTexCoord2f(1, 0); glVertex2f(scoreX1 + 0.1, scoreY1); //Down Right
+	glTexCoord2f(1, 1); glVertex2f(scoreX1 + 0.1, scoreY1 + 0.1); //Upper Right
+	glTexCoord2f(0, 1); glVertex2f(scoreX1, scoreY1 + 0.1); //Upper Left
+	glEnd();
+	glPopMatrix();
+
+	glDisable(GL_BLEND);
 
 	glutSwapBuffers();
 }
@@ -314,6 +347,18 @@ void renderScene() {
 
 
 void main(int argc, char* argv[]) {
+
+	strcpy_s(scoreString[0], "assets/images/0.png");
+	strcpy_s(scoreString[1], "assets/images/1.png");
+	strcpy_s(scoreString[2], "assets/images/2.png");
+	strcpy_s(scoreString[3], "assets/images/3.png");
+	strcpy_s(scoreString[4], "assets/images/4.png");
+	strcpy_s(scoreString[5], "assets/images/5.png");
+	strcpy_s(scoreString[6], "assets/images/6.png");
+	strcpy_s(scoreString[7], "assets/images/7.png");
+	strcpy_s(scoreString[8], "assets/images/8.png");
+	strcpy_s(scoreString[9], "assets/images/9.png");
+
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
@@ -333,6 +378,8 @@ void main(int argc, char* argv[]) {
 	BackgroundImage = loadTexture("assets/images/backgroundImage-Day.png");
 	Ground = loadTexture("assets/images/ground.png");
 	GameOver = loadTexture("assets/images/gameover.png");
+	
+
 	
 	theBird.initializeBirdObject();
 	thePipe.initialize();
