@@ -370,6 +370,10 @@ void renderScene() {
 
 
 void main(int argc, char* argv[]) {
+	//Print Commands
+	printf("Press Upper arrow Key to change to Day.\n");
+	printf("Press Lower arrow Key to change to Night.\n");
+	printf("Press BackSpace Key to reset.\n\n\n");
 
 	//Print Credits
 	printf(" _____              _ _ _					\n");
@@ -378,9 +382,9 @@ void main(int argc, char* argv[]) {
 	printf("| |   | '__/ _ \\/ _` | | __/ __|			\n");
 	printf("| \\__/\\ | |  __/ (_| | | |_\\__ \\  _		\n");
 	printf(" \\____/_|  \\___|\\__,_|_|\\__|___/ (_)	\n\n\n");
-	printf("\t • Ismail Ahmed Zekry	\n");
-	printf("\t • Rany Hatem			\n");
-	printf("\t • Mostafa Sami		\n");
+	printf("\t Â• Ismail Ahmed Zekry	\n");
+	printf("\t Â• Rany Hatem			\n");
+	printf("\t Â• Mostafa Sami		\n");
 
 	//Location of score pictures
 	strcpy_s(scoreString[0], "assets/images/0.png");
