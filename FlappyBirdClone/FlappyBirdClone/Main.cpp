@@ -18,6 +18,7 @@ GLfloat ambient[] = { 1.0f, 1.0f, 1.0f, 1.0f };  //{ 0.25f, 0.25f, 0.25f, 1.0f }
 GLfloat position[] = { 0.0f, 0.0f, 2.0f, 1.0f }; //{ 0.f, 0.45f, 1.0f, 1.0f };
 
 bool gameOver = false;
+bool lightsOn = false; //To check if lights on or not
 
 //Define score variables
 int score = 0;
@@ -187,6 +188,8 @@ public:
 
 		y2 = y1 + (float) 0.12;
 
+		if (lightsOn) //If lights are on (scene is dark) then disable it and render bird texture
+			glDisable(GL_LIGHTING);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_BLEND);
 
@@ -204,6 +207,9 @@ public:
 		glEnd();
 		glPopMatrix();
 		glDisable(GL_BLEND);
+
+		if (lightsOn)
+			glEnable(GL_LIGHTING);
 
 	}
 
@@ -261,11 +267,13 @@ void dayOrNight() {
 		BackgroundImage = loadTexture("assets/images/backgroundImage-Day.png");
 		glDisable(GL_LIGHT0);
 		glDisable(GL_LIGHTING);
+		lightsOn = false;
 	}
 	else if (GetAsyncKeyState(VK_DOWN)) {
 		BackgroundImage = loadTexture("assets/images/backgroundImage-Night.png");
 		glEnable(GL_LIGHT0);
 		glEnable(GL_LIGHTING);
+		lightsOn = true;
 
 	}
 }
@@ -275,7 +283,7 @@ void myTimer(int t) {
 	theBird.update();
 	thePipe.update();
 	glutPostRedisplay(); ///////////////////////////////////////////////////////////////////////////////////////////////////CHRCK
-	glutTimerFunc(16, myTimer, 0); ///////////////////////////////////////////////////////////////////////////////////////////////////CHRCK
+	glutTimerFunc(1000/60, myTimer, 0); //This should ask for a refresh every 60th of a seccond. //////////////////////////////////////CHRCK
 }
 
 void renderScene() {
@@ -314,6 +322,8 @@ void renderScene() {
 
 	//Render GameOver Text
 	if (gameOver) {
+		if (lightsOn) //If lights are on (scene is dark) then disable it and render gameOver texture
+			glDisable(GL_LIGHTING);
 
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_BLEND);
@@ -329,10 +339,16 @@ void renderScene() {
 		glPopMatrix();
 
 		glDisable(GL_BLEND);
+
+		if (lightsOn)
+			glEnable(GL_LIGHTING);
 	}
 
 	//Render Score
 	Score = loadTexture(scoreString[score]);
+	if (lightsOn) //If lights are on (scene is dark) then disable it and render score texture
+		glDisable(GL_LIGHTING);
+
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	
@@ -346,13 +362,25 @@ void renderScene() {
 	glEnd();
 	glPopMatrix();
 
-	glDisable(GL_BLEND);
+	if (lightsOn)
+		glEnable(GL_LIGHTING);
 
 	glutSwapBuffers();
 }
 
 
 void main(int argc, char* argv[]) {
+
+	//Print Credits
+	printf(" _____              _ _ _					\n");
+	printf("/  __ \\            | (_) |        _		\n");
+	printf("| /  \\/_ __ ___  __| |_| |_ ___  (_)		\n");
+	printf("| |   | '__/ _ \\/ _` | | __/ __|			\n");
+	printf("| \\__/\\ | |  __/ (_| | | |_\\__ \\  _		\n");
+	printf(" \\____/_|  \\___|\\__,_|_|\\__|___/ (_)	\n\n\n");
+	printf("\t • Ismail Ahmed Zekry	\n");
+	printf("\t • Rany Hatem			\n");
+	printf("\t • Mostafa Sami		\n");
 
 	//Location of score pictures
 	strcpy_s(scoreString[0], "assets/images/0.png");
@@ -375,7 +403,7 @@ void main(int argc, char* argv[]) {
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(600, 700);
 
-	glutCreateWindow("Flappy Bird Clone");
+	glutCreateWindow("Flappy Bird Clone - Computer Graphics Project");
 
 	glutDisplayFunc(renderScene);
 	glutReshapeFunc(reshapeFunc);
