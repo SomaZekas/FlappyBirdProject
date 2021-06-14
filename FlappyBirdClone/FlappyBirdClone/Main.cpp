@@ -374,7 +374,7 @@ void main(int argc, char* argv[]) {
 	printf("Press BackSpace Key to reset\n.");
 	printf("Press Upper arrow Key to change to Day.\n");
 	printf("Press Lower arrow Key to change to Night.\n");
-	printf("Press BackSpace Key to reset.\n\n\n");
+	printf("Press BackSpace Key to play again.\n\n\n");
 
 	//Print Credits
 	printf(" _____              _ _ _					\n");
