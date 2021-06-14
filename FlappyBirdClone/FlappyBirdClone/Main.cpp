@@ -412,7 +412,7 @@ void main(int argc, char* argv[]) {
 
 	glutDisplayFunc(renderScene);
 	glutReshapeFunc(reshapeFunc);
-	glutTimerFunc(16, myTimer, 0); ///////////////////////////////////////////////////////////////////////////////////////////CHRCK
+	glutTimerFunc(16, myTimer, 0); ////////CHRCK
 
 
 	glEnable(GL_TEXTURE_2D);
