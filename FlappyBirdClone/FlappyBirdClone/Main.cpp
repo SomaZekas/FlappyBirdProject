@@ -1,5 +1,5 @@
 /*
-	Computer Graphics Project
+	Computer Graphics Project - Flappy Bird Clone
 	Made By:
 		Ismail Ahmed Zekry
 		Rany Hatem
@@ -61,12 +61,14 @@ int loadTexture(const char* location) {
 void reshapeFunc(int w, int h) {
 	glViewport(0, 0, w, h);
 
-	glMatrixMode(GL_PROJECTION); /////////////////////////////////////////////////////////////////////////////////////////CHRCK
-	glLoadIdentity();
+	//Defines the properties of the camera that views the objects in the world coordinate frame.
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity(); //Essentially resets the matrix back to its default state.
 
 	gluOrtho2D(-w / 600, w / 600, -h / 700, h / 700);
 
-	glMatrixMode(GL_MODELVIEW); /////////////////////////////////////////////////////////////////////////////////////////CHRCK
+	//Defines how your objects are transformed in your world coordinate frame.
+	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 }
 
@@ -78,6 +80,7 @@ public:
 		float y; //Lower Y of upper pipe
 	};
 
+	//Object variables
 	int count;
 	float gap = 0.5;
 	float leftEdge = -1;
@@ -86,7 +89,7 @@ public:
 
 	Pipe* pipes;
 
-
+	//Functions
 	PipeObject(int count) {
 		this->count = count;
 		pipes = new Pipe[count];
@@ -148,8 +151,8 @@ public:
 
 		//Generating a random number to determine the location of the gap.
 		do {
-			pipes[i].y = rand() / (double)RAND_MAX;
-		} while (pipes[i].y > -0.7 && pipes[i].y < 0.5);
+			pipes[i].y = rand() / (float)RAND_MAX;
+		} while (pipes[i].y > -0.2 && pipes[i].y < 0.5);
 
 	}
 
@@ -197,22 +200,20 @@ public:
 
 		if (lightsOn) //If lights are on (scene is dark) then disable it and render bird texture
 			glDisable(GL_LIGHTING);
+
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_BLEND);
 
-		
 		glBindTexture(GL_TEXTURE_2D, texture);
-		
 		glPushMatrix();
-		
 		glBegin(GL_QUADS);
-		
 		glTexCoord2f(0, 0); glVertex2f(-0.06, y1); //Down Left
 		glTexCoord2f(1, 0); glVertex2f(0.06, y1); //Down Right
 		glTexCoord2f(1, 1); glVertex2f(0.06, y2); //Upper Right
 		glTexCoord2f(0, 1); glVertex2f(-0.06, y2); //Upper Left
 		glEnd();
 		glPopMatrix();
+
 		glDisable(GL_BLEND);
 
 		if (lightsOn)
@@ -235,12 +236,13 @@ public:
 
 				if (GetAsyncKeyState(VK_BACK)) {
 					gameOver = false;
-					thePipe.initialize();
-					initializeBirdObject();
-					scoreX1 = -0.9;
-					scoreY1 = 0.8;
 					score = 0;
 					scoreBool = true;
+					scoreX1 = -0.9;
+					scoreY1 = 0.8;
+					thePipe.initialize();
+					initializeBirdObject();
+					
 				}
 				
 			}

@@ -1,35 +1,34 @@
 ﻿  Main.cpp
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(27,21): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(27,36): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(114,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(115,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(133,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(134,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(138,1): warning C4305: '=': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(139,1): warning C4305: '=': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(144,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(160,1): warning C4305: '-=': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(161,1): warning C4305: '-=': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(178,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(183,1): warning C4305: '=': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(203,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(204,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(205,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(206,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(226,1): warning C4305: '=': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(233,1): warning C4305: '=': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(34,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(34,36): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(124,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(125,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(143,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(144,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(148,1): warning C4305: '=': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(149,1): warning C4305: '=': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(170,1): warning C4305: '-=': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(171,1): warning C4305: '-=': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(188,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(193,1): warning C4305: '=': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(210,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(211,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(212,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(213,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(234,1): warning C4305: '=': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(242,1): warning C4305: '+=': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(244,1): warning C4305: '-=': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(318,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(319,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(334,43): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(335,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(336,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(337,43): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(359,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(360,56): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(360,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(361,50): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(372,35): warning C4326: return type of 'main' should be 'int' instead of 'void'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(241,1): warning C4305: '=': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(242,1): warning C4305: '=': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(251,1): warning C4305: '+=': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(253,1): warning C4305: '-=': truncation from 'double' to 'float'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(327,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(328,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(343,43): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(344,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(345,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(346,43): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(368,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(369,56): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(369,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(370,50): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(381,35): warning C4326: return type of 'main' should be 'int' instead of 'void'
   FlappyBirdClone.vcxproj -> D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\Debug\FlappyBirdClone.exe
