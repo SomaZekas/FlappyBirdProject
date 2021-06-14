@@ -371,6 +371,7 @@ void renderScene() {
 
 void main(int argc, char* argv[]) {
 	//Print Commands
+	printf("Press BackSpace Key to reset\n.");
 	printf("Press Upper arrow Key to change to Day.\n");
 	printf("Press Lower arrow Key to change to Night.\n");
 	printf("Press BackSpace Key to reset.\n\n\n");
