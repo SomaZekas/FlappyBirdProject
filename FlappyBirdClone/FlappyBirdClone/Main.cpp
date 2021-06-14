@@ -3,7 +3,7 @@
 	Made By:
 		Ismail Ahmed Zekry
 		Rany Hatem
-		Mostafa Sami
+		Mostafa Mohamed Sami
 */
 #include <stdio.h>
 #include <math.h>
@@ -291,8 +291,8 @@ void myTimer(int t) {
 	dayOrNight();
 	theBird.update();
 	thePipe.update();
-	glutPostRedisplay(); ///////////////////////////////////////////////////////////////////////////////////////////////////CHRCK
-	glutTimerFunc(1000/60, myTimer, 0); //This should ask for a refresh every 60th of a seccond. //////////////////////////////////////CHRCK
+	glutPostRedisplay(); //If you don’t tell the mainloop it needs to draw the next frame with a glutPostRedisplay then your animation will look as if it is stuck (no animation)
+	glutTimerFunc(1000/60, myTimer, 0); //This should ask for a refresh every 60th of a seccond. Acts like a refresh operation.
 }
 
 void renderScene() {
@@ -315,8 +315,6 @@ void renderScene() {
 
 	//Render Bird
 	theBird.renderBird();
-
-	
 
 	//Render Ground
 	glBindTexture(GL_TEXTURE_2D, Ground);
@@ -374,7 +372,7 @@ void renderScene() {
 	if (lightsOn)
 		glEnable(GL_LIGHTING);
 
-	glutSwapBuffers();
+	glutSwapBuffers(); //Performs the actual buffer swap for animation.
 }
 
 
@@ -393,8 +391,8 @@ void main(int argc, char* argv[]) {
 	printf("| \\__/\\ | |  __/ (_| | | |_\\__ \\  _		\n");
 	printf(" \\____/_|  \\___|\\__,_|_|\\__|___/ (_)	\n\n\n");
 	printf("\t  Ismail Ahmed Zekry	\n");
-	printf("\t  Rany Hatem			\n");
-	printf("\t  Mostafa Sami		\n\n\n");
+	printf("\t  Rany Hatem fathy	\n");
+	printf("\t  Mostafa Mohamed Sami\n\n\n");
 
 	//Location of score pictures
 	strcpy_s(scoreString[0], "assets/images/0.png");

@@ -20,15 +20,15 @@ D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBir
 D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(242,1): warning C4305: '=': truncation from 'double' to 'float'
 D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(251,1): warning C4305: '+=': truncation from 'double' to 'float'
 D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(253,1): warning C4305: '-=': truncation from 'double' to 'float'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(327,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(328,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(343,43): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(344,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(345,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(346,43): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(368,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(369,56): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(369,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(370,50): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(381,35): warning C4326: return type of 'main' should be 'int' instead of 'void'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(325,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(326,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(341,43): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(342,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(343,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(344,43): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(366,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(367,56): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(367,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(368,50): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\FlappyBirdClone\Main.cpp(379,35): warning C4326: return type of 'main' should be 'int' instead of 'void'
   FlappyBirdClone.vcxproj -> D:\My Folder\university\semester 8\Computer Graphics\FlappyBirdProject\FlappyBirdClone\Debug\FlappyBirdClone.exe
