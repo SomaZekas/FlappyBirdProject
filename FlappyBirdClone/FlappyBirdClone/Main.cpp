@@ -1,3 +1,10 @@
+/*
+	Computer Graphics Project
+	Made By:
+		Ismail Ahmed Zekry
+		Rany Hatem
+		Mostafa Sami
+*/
 #include <stdio.h>
 #include <math.h>
 #include <windows.h>
@@ -13,9 +20,9 @@
 GLuint BackgroundImage, Ground, Pipes, GameOver, Score;
 
 //Define light variables
-GLfloat diffuse[] = { 0.0f, 0.0f, 0.1f, 1.0f };  // { 1.0f, 1.0f, 1.0f, 1.0f };
-GLfloat ambient[] = { 1.0f, 1.0f, 1.0f, 1.0f };  //{ 0.25f, 0.25f, 0.25f, 1.0f };
-GLfloat position[] = { 0.0f, 0.0f, 2.0f, 1.0f }; //{ 0.f, 0.45f, 1.0f, 1.0f };
+GLfloat diffuse[] = { 0.0f, 0.0f, 0.1f, 1.0f };
+GLfloat ambient[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+GLfloat position[] = { 0.0f, 0.0f, 2.0f, 1.0f };
 
 bool gameOver = false;
 bool lightsOn = false; //To check if lights on or not
