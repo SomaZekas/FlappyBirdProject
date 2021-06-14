@@ -385,7 +385,7 @@ void main(int argc, char* argv[]) {
 	printf(" \\____/_|  \\___|\\__,_|_|\\__|___/ (_)	\n\n\n");
 	printf("\t  Ismail Ahmed Zekry	\n");
 	printf("\t  Rany Hatem			\n");
-	printf("\t  Mostafa Sami		\n");
+	printf("\t  Mostafa Sami		\n\n\n");
 
 	//Location of score pictures
 	strcpy_s(scoreString[0], "assets/images/0.png");
